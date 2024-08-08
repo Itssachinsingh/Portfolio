@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
+import { IoDocumentOutline } from "react-icons/io5";
+// import { saveAs } from "file-saver"; // Optional library for saving files
 
 // Also install this npm i --save-dev @types/react-lottie
 import Lottie from "react-lottie";
 
 import { cn } from "@/lib/utils";
-
 
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
@@ -56,6 +57,7 @@ export const BentoGridItem = ({
   const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
 
   const [copied, setCopied] = useState(false);
+  const [downloaded, setDownloaded] = useState(false);
 
   const defaultOptions = {
     loop: copied,
@@ -71,6 +73,27 @@ export const BentoGridItem = ({
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
+  
+
+  const defaultOptions2 = {
+    loop: downloaded,
+    autoplay: downloaded,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+  const handleDownload = () => {
+    const resumeUrl = "/path/to/your/resume.pdf"; // Replace with the correct path to your resume
+    const link = document.createElement("a"); // Create a temporary <a> element
+    link.href = resumeUrl; // Set the href to your resume URL
+    link.download = "Your_Name_Resume.pdf"; // Set the desired download filename
+    document.body.appendChild(link); // Append the link to the document
+    link.click(); // Programmatically click the link to trigger the download
+    document.body.removeChild(link); // Remove the link from the document
+    setDownloaded(true); // Update the button text or other UI elements
+  };
+  
 
   return (
     <div
@@ -99,8 +122,9 @@ export const BentoGridItem = ({
           )}
         </div>
         <div
-          className={`absolute right-0 -bottom-5 ${id === 5 && "w-full opacity-80"
-            } `}
+          className={`absolute right-0 -bottom-5 ${
+            id === 5 && "w-full opacity-80"
+          } `}
         >
           {spareImg && (
             <img
@@ -170,6 +194,31 @@ export const BentoGridItem = ({
               </div>
             </div>
           )}
+          {id === 4 && (
+            <div className="mt-5 relative">
+              {/* button border magic from tailwind css buttons  */}
+              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
+              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
+              {/* add handleCopy() for the copy the text */}
+              <div
+                className={`absolute -bottom-5 right-0 ${
+                  copied ? "block" : "block"
+                }`}
+              >
+                {/* <img src="/confetti.gif" alt="confetti" /> */}
+                <Lottie options={defaultOptions2} height={200} width={400} />
+              </div>
+              <MagicButton
+                title={copied ? "Resume Downloaded!" : "Get My Resume"}
+                icon={<IoDocumentOutline />}
+                position="left"
+                handleClick={handleDownload}
+                otherClasses="!bg-[#161A31]"
+              />
+              
+            </div>
+          )}
+
           {id === 6 && (
             <div className="mt-5 relative">
               {/* button border magic from tailwind css buttons  */}
@@ -177,8 +226,9 @@ export const BentoGridItem = ({
               {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
               {/* add handleCopy() for the copy the text */}
               <div
-                className={`absolute -bottom-5 right-0 ${copied ? "block" : "block"
-                  }`}
+                className={`absolute -bottom-5 right-0 ${
+                  copied ? "block" : "block"
+                }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
                 <Lottie options={defaultOptions} height={200} width={400} />
