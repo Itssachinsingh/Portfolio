@@ -83,7 +83,7 @@ export const BentoGridItem = ({
   };
 
   const handleDownload = () => {
-    const resumeUrl = "/Sachin_resume.pdf" 
+    const resumeUrl = "/resume.pdf" 
     const link = document.createElement("a"); 
     link.href = resumeUrl; 
     link.download = "Sachin_Singh_Resume.pdf"; 
