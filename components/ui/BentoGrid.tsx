@@ -67,7 +67,7 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
+    const text = "hi.itssachinsingh@gmail.com";
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
@@ -141,31 +141,32 @@ export const BentoGridItem = ({
 
           {/* Tech stack list div */}
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              {/* tech stack lists */}
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                {leftLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
+            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-2 lg:right-2">
+              <div className="flex flex-col gap-3 lg:gap-4">
+                {["React.js", "Next.js", "Node js", "Express.js"].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="py-2 lg:py-3 lg:px-3 px-3 text-xs lg:text-sm opacity-50 lg:opacity-100  rounded-lg text-center bg-[#10132E] "
+                    >
+                      {item}
+                    </span>
+                  )
+                )}
+                <span className="py-2 px-3 rounded-lg text-center bg-[#10132e]"></span>
               </div>
-              <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                <span className="lg:py-4 lg:px-3 py-4 px-3  rounded-lg text-center bg-[#10132E]"></span>
-                {rightLists.map((item, i) => (
-                  <span
-                    key={i}
-                    className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-                    lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                  >
-                    {item}
-                  </span>
-                ))}
+              <div className="flex flex-col gap-3 lg:gap-4">
+                <span className="py-2 px-3 rounded-lg text-center bg-[#10132e]"></span>
+                {["MongoDB", "PostgreSQL", "SQL", "Git & GitHub"].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="py-2 lg:py-3 lg:px-3 px-3 text-xs lg:text-sm opacity-50 lg:opacity-100  rounded-lg text-center bg-[#10132E] "
+                    >
+                      {item}
+                    </span>
+                  )
+                )}
               </div>
             </div>
           )}
