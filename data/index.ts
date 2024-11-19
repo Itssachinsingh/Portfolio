@@ -74,19 +74,19 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    title: "Agriculture E-commerce site",
+    des: "Amit Beej Bhandar is a seed retailer in Ellenabad, Sirsa-Haryana, and Meerut, India that sells agricultural products like fertilizers, pesticides, and insecticides.",
+    img: "/project1.png",
+    iconLists: ["/re.svg", "/tail.svg", ],
+    link: "https://amitbeejbhandar.in/",
   },
   {
     id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
+    title: "A clothing E-commerce site",
+    des: "A seemless and minimalist apparel website, selling wide range of cloths to different customers.",
+    img: "/project2.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    link: "https://e-commerce-cyan-nine-38.vercel.app/",
   },
   {
     id: 3,
@@ -109,31 +109,31 @@ export const projects = [
 export const testimonials = [
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+      "Collaborating with Sachin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Sachin's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Sachin is the ideal partner.",
     name: "Michael Johnson",
     title: "Director of AlphaStream Technologies",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+      "Collaborating with Sachin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Sachin's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Sachin is the ideal partner.",
     name: "Michael Johnson",
     title: "Director of AlphaStream Technologies",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+      "Collaborating with Sachin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Sachin's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Sachin is the ideal partner.",
     name: "Michael Johnson",
     title: "Director of AlphaStream Technologies",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+      "Collaborating with Sachin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Sachin's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Sachin is the ideal partner.",
     name: "Michael Johnson",
     title: "Director of AlphaStream Technologies",
   },
   {
     quote:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+      "Collaborating with Sachin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Sachin's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Sachin is the ideal partner.",
     name: "Michael Johnson",
     title: "Director of AlphaStream Technologies",
   },
