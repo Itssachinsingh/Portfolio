@@ -92,7 +92,7 @@ export const projects = [
     id: 3,
     title: "A clothing E-commerce site",
     des: "A seemless and minimalist apparel website, selling wide range of cloths to different customers.",
-    img: "/project2.png",
+    img: "/project3.png",
     iconLists: ["/next.svg", "/tail.svg"],
     link: "https://e-commerce-cyan-nine-38.vercel.app/",
   },
