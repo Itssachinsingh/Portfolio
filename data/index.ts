@@ -3,7 +3,6 @@ import { url } from "inspector";
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
   { name: "Contact", link: "#contact" },
 ];
 
@@ -73,27 +72,17 @@ export const gridItems = [
 
 export const projectCategories = [
   { id: "web-app", title: "Professional Web Apps" },
-  { id: "landing-page", title: "Landing Pages" },
 ];
 
 export const projects = [
   {
-    id: 1,
-    category: "landing-page",
-    title: "Agriculture E-commerce site",
-    des: "Amit Beej Bhandar is a seed retailer in Ellenabad, Sirsa-Haryana, and Meerut, India that sells agricultural products like fertilizers, pesticides, and insecticides.",
-    img: "/project1.png",
-    iconLists: ["/re.svg", "/tail.svg"],
-    link: "https://amitbeejbhandar.in/",
-  },
-  {
-    id: 2,
-    category: "landing-page",
-    title: "A Digital Media Agency",
-    des: "A Digital Media Agency providing various services such as web development, graphic desigining and video editing using the latest tech stack.",
-    img: "/project2.png",
-    iconLists: ["/re.svg", "/tail.svg", ],
-    link: "https://studio-pixelcraft.com/",
+    id: 8,
+    category: "web-app",
+    title: "bepay money IGPS Dashboard",
+    des: "Business payments dashboard for fiat and stablecoin balances, deposits, payouts, beneficiaries and transaction tracking.",
+    img: "/bepay_igps.png",
+    iconLists: ["/next.svg", "/tail.svg", "/fm.svg"],
+    link: "https://igps.bepay.money",
   },
   {
     id: 3,
@@ -113,79 +102,36 @@ export const projects = [
     iconLists: ["/re.svg"],
     link: "https://weatherapp-bysachinsingh.netlify.app",
   },
-];
-
-export const testimonials = [
   {
-    quote:
-      "Collaborating with Sachin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Sachin's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Sachin is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Sachin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Sachin's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Sachin is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Sachin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Sachin's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Sachin is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Sachin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Sachin's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Sachin is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-  {
-    quote:
-      "Collaborating with Sachin was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Sachin's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Sachin is the ideal partner.",
-    name: "Michael Johnson",
-    title: "Director of AlphaStream Technologies",
-  },
-];
-
-export const companies = [
-  {
-    id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
-  },
-  {
-    id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
-  },
-  {
-    id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
-  },
-  {
-    id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
-  },
-  {
-    id: 5,
-    name: "docker.",
-    img: "/dock.svg",
-    nameImg: "/dockerName.svg",
+    id: 6,
+    category: "web-app",
+    title: "Music Streaming App",
+    des: "A Spotify-style music player built with React — upload songs with track and artist names, search them and listen right in the browser.",
+    img: "/music_app.png",
+    iconLists: ["/re.svg"],
+    link: "https://music-app-seven-theta.vercel.app/",
   },
 ];
 
 export const workExperience = [
   {
+    id: 3,
+    title: "Full Stack Developer",
+    desc: "Currently working as a Full Stack Developer at bepay money, building fintech payment dashboards and APIs with Next.js, Node.js (Express), TypeScript and MongoDB.",
+    className: "md:col-span-2",
+    thumbnail: "/exp3.svg",
+  },
+  {
+    id: 2,
+    title: "Frontend Developer",
+    desc: "Worked for 6 months as a Frontend Developer at Giakaa, building the Giakaa Innovate website with Next.js, Tailwind CSS and Framer Motion.",
+    className: "md:col-span-2",
+    thumbnail: "/exp2.svg",
+  },
+  {
     id: 1,
     title: "Frontend Engineer Intern",
-    desc: "Worked for 6 months as an Intern at CreatedInAm a web-based services provider, using React.js and Nex.js, enhancing interactivity and clean UI.",
+    desc: "Worked for 6 months as an Intern at CreatedInAm a web-based services provider, using React.js and Next.js, enhancing interactivity and clean UI.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
   },
@@ -217,11 +163,6 @@ export const socialMedia = [
     id: 1,
     img: "/git.svg",
     url: 'https://github.com/Itssachinsingh'
-  },
-  {
-    id: 2,
-    img: "/twit.svg",
-    url: '#'
   },
   {
     id: 3,

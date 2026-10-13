@@ -5,7 +5,8 @@ import { IoDocumentOutline } from "react-icons/io5";
 // Also install this npm i --save-dev @types/react-lottie
 import dynamic from "next/dynamic";
 
-// lottie-web touches `document` on import, so it can't be rendered on the server
+// lottie-web touches `document` on import, so it can't be rendered on the server.
+// Being lazy-loaded, React drops its defaultProps on unmount, so pass `eventListeners` explicitly.
 const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 import { cn } from "@/lib/utils";
@@ -54,9 +55,6 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
-
   const [copied, setCopied] = useState(false);
   const [downloaded, setDownloaded] = useState(false);
 
@@ -200,7 +198,7 @@ export const BentoGridItem = ({
                 }`}
               >
                 {/* <img src="/confetti.gif" alt="confetti" /> */}
-                <Lottie options={defaultOptions2} height={200} width={400} />
+                <Lottie options={defaultOptions2} height={200} width={400} eventListeners={[]} />
               </div>
               <MagicButton
                 title={copied ? "Resume Downloaded!" : "Get My Resume"}
@@ -221,7 +219,7 @@ export const BentoGridItem = ({
                   copied ? "block" : "block"
                 }`}
               >
-                <Lottie options={defaultOptions} height={200} width={400} />
+                <Lottie options={defaultOptions} height={200} width={400} eventListeners={[]} />
               </div>
 
               <MagicButton
