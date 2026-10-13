@@ -3,7 +3,10 @@ import { IoCopyOutline } from "react-icons/io5";
 import { IoDocumentOutline } from "react-icons/io5";
  
 // Also install this npm i --save-dev @types/react-lottie
-import Lottie from "react-lottie";
+import dynamic from "next/dynamic";
+
+// lottie-web touches `document` on import, so it can't be rendered on the server
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 import { cn } from "@/lib/utils";
 

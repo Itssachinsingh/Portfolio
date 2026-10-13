@@ -71,9 +71,15 @@ export const gridItems = [
   },
 ];
 
+export const projectCategories = [
+  { id: "web-app", title: "Professional Web Apps" },
+  { id: "landing-page", title: "Landing Pages" },
+];
+
 export const projects = [
   {
     id: 1,
+    category: "landing-page",
     title: "Agriculture E-commerce site",
     des: "Amit Beej Bhandar is a seed retailer in Ellenabad, Sirsa-Haryana, and Meerut, India that sells agricultural products like fertilizers, pesticides, and insecticides.",
     img: "/project1.png",
@@ -82,6 +88,7 @@ export const projects = [
   },
   {
     id: 2,
+    category: "landing-page",
     title: "A Digital Media Agency",
     des: "A Digital Media Agency providing various services such as web development, graphic desigining and video editing using the latest tech stack.",
     img: "/project2.png",
@@ -90,6 +97,7 @@ export const projects = [
   },
   {
     id: 3,
+    category: "web-app",
     title: "A clothing E-commerce site",
     des: "A seemless and minimalist apparel website, selling wide range of cloths to different customers.",
     img: "/project3.png",
@@ -98,6 +106,7 @@ export const projects = [
   },
   {
     id: 4,
+    category: "web-app",
     title: "Animated Weather app for fun",
     des: "It is just a weather app bg changing with weathers and a little animation for better UI.",
     img: "/project4.png",
