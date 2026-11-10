@@ -1,172 +1,209 @@
-import { url } from "inspector";
+// All of the site's content lives here.
 
-export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Contact", link: "#contact" },
+export const profile = {
+  name: "Sachin Singh",
+  role: "Full-Stack Developer",
+  location: "Dehradun, India",
+  timezone: "IST (UTC+5:30)",
+  email: "hi.itssachinsingh@gmail.com",
+  resume: "/resume.pdf",
+  github: "https://github.com/Itssachinsingh",
+  linkedin: "https://www.linkedin.com/in/sachinsingh--/",
+};
+
+export const navLinks = [
+  { name: "Work", href: "#work" },
+  { name: "Experience", href: "#experience" },
+  { name: "Stack", href: "#stack" },
+  { name: "Contact", href: "#contact" },
 ];
 
-export const gridItems = [
-  {
-    id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
-    description: "",
-    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-    imgClassName: "w-full h-full",
-    titleClassName: "justify-end",
-    img: "/b1.svg",
-    spareImg: "",
-  },
-  {
-    id: 2,
-    title: "I'm very flexible with time zone communications",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "",
-    spareImg: "",
-  },
-  {
-    id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-center",
-    img: "",
-    spareImg: "",
-  },
-  {
-    id: 4,
-    title: "Tech enthusiast with a passion for development.",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "/grid.svg",
-    spareImg: "/b4.svg",
-  },
+type FeaturedProject = {
+  id: string;
+  label: string;
+  title: string;
+  summary: string;
+  // optional: say exactly what you owned on this project, it's what recruiters look for
+  role?: string;
+  points: string[];
+  // small print shown under the points, e.g. what an asterisk in the summary refers to
+  footnote?: string;
+  stack: string[];
+  img: string;
+  link?: string;
+};
 
+// products built at bepay money, shown as full case studies
+export const professionalProjects: FeaturedProject[] = [
   {
-    id: 5,
-    title: "Currently building different but interesting projects",
-    description: "The Inside Scoop",
-    className: "md:col-span-3 md:row-span-2",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-    titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
-    spareImg: "/grid.svg",
-  },
-  {
-    id: 6,
-    title: "Do you want to start a project together?",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-    img: "",
-    spareImg: "",
-  },
-];
-
-export const projectCategories = [
-  { id: "web-app", title: "Professional Web Apps" },
-];
-
-export const projects = [
-  {
-    id: 8,
-    category: "web-app",
-    title: "bepay money IGPS Dashboard",
-    des: "Business payments dashboard for fiat and stablecoin balances, deposits, payouts, beneficiaries and transaction tracking.",
+    id: "igps",
+    label: "Payments dashboard · Live",
+    title: "bepay money IGPS",
+    summary:
+      "A cross-border payments platform. Businesses hold fiat and crypto in one balance and can send either to anyone, in any country.*",
+    role: "Built the cross-border crypto and fiat payment flows and integrated the production REST APIs.",
+    points: [
+      "One combined balance across fiat (USD, EUR) and USDC / USDT on Ethereum, Solana and Polygon",
+      "Deposit, get-paid and send flows, with saved beneficiaries for international payouts",
+      "Transaction history filtered by pending, completed and failed, with a detail view for each transaction",
+      "Organisation switching and team management for multi-user business accounts",
+    ],
+    footnote: "* A few countries aren't supported yet.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     img: "/bepay_igps.png",
-    iconLists: ["/next.svg", "/tail.svg", "/fm.svg"],
     link: "https://igps.bepay.money",
   },
   {
-    id: 3,
-    category: "web-app",
-    title: "A clothing E-commerce site",
-    des: "A seemless and minimalist apparel website, selling wide range of cloths to different customers.",
-    img: "/project3.png",
-    iconLists: ["/next.svg", "/tail.svg"],
-    link: "https://e-commerce-cyan-nine-38.vercel.app/",
+    id: "merchant",
+    label: "Merchant app · In development",
+    title: "bepay business merchant app",
+    summary:
+      "Lets online stores and merchants accept crypto as payment, then track their sales, payouts and turnover from one dashboard.",
+    role: "Built merchant onboarding and the crypto and fiat payment flows.",
+    // TODO: add the stack; add a link once it launches
+    points: [
+      "Accept crypto from customers at checkout or through shareable payment links",
+      "A merchant wallet with send, receive and swap, so earnings can be converted or paid out",
+      "Payout and turnover summaries, with a monthly turnover chart by week, month, year or a custom range",
+      "Payment history, a sandbox mode for testing and a preview of the upcoming loyalty programme",
+    ],
+    stack: [],
+    img: "/merchant-app.png",
   },
   {
-    id: 4,
-    category: "web-app",
-    title: "Animated Weather app for fun",
-    des: "It is just a weather app bg changing with weathers and a little animation for better UI.",
-    img: "/project4.png",
-    iconLists: ["/re.svg"],
-    link: "https://weatherapp-bysachinsingh.netlify.app",
+    id: "partner",
+    label: "B2B platform · In development",
+    title: "bepay money partner dashboard",
+    summary:
+      "A B2B platform that lets businesses launch their own branded crypto wallets on bepay's infrastructure. Partners connect through the bepay API to create wallets for their customers, then run the whole integration from one dashboard.",
+    role: "Built the dashboard, including the sandbox and live modes, scoped API keys and webhooks.",
+    // TODO: add the stack; add a link once it launches
+    points: [
+      "Sandbox and live environments, with a full-width warning whenever real funds and production keys are active",
+      "API keys with scoped permissions (create, import and read wallets, read balances and history, send, swap and manage networks), issued as read-only or full access",
+      "Webhooks and request logs, so partners can follow and debug every call their backend makes",
+      "Wallets, transactions, custom networks and tokens, gas settings, team roles and an activity log",
+    ],
+    stack: [],
+    img: "/bepay-partner-dashboard.png",
   },
   {
-    id: 6,
-    category: "web-app",
-    title: "Music Streaming App",
-    des: "A Spotify-style music player built with React — upload songs with track and artist names, search them and listen right in the browser.",
-    img: "/music_app.png",
-    iconLists: ["/re.svg"],
+    id: "website",
+    label: "Company website · Live",
+    title: "bepay money website",
+    summary:
+      "bepay money's public website, presenting its products to people and businesses: IGPS, personal and business accounts, UPI, and the B2B infrastructure other brands use to launch their own wallets.",
+    role: "Built the full-stack blog CMS that publishes to the live site.",
+    // TODO: add the stack
+    points: [
+      "Product pages for IGPS, personal, business, UPI and B2B solutions",
+      "A hero with a phone wallet and stablecoin card mockup",
+      "Sales contact and live chat entry points throughout",
+    ],
+    stack: [],
+    img: "/bepay-website.png",
+    link: "https://bepay.money",
+  },
+];
+
+type PersonalProject = {
+  title: string;
+  des: string;
+  // small print under the description, e.g. availability
+  note?: string;
+  stack: string[];
+  img: string;
+  link?: string;
+};
+
+// things built on my own time, shown as a compact grid
+export const personalProjects: PersonalProject[] = [
+  {
+    title: "Cortex",
+    des: "A personal productivity app with an AI-picked task of the day, a procrastination radar that flags tasks you keep avoiding and explains why, goals, streaks and a focus score.",
+    note: "I built it for my own use, so sign-ups aren't open yet. Public accounts are coming soon.",
+    // TODO: add the stack
+    stack: [],
+    img: "/cortex.png",
+    link: "https://cortex-aitool.vercel.app/dashboard",
+  },
+  {
+    title: "Pulse",
+    des: "A music streaming app for your own library: drop in audio files and their tags and cover art are read automatically, with search, favourites, recently played and a light-show mode.",
+    stack: ["React"],
+    img: "/pulse-music.png",
     link: "https://music-app-seven-theta.vercel.app/",
   },
+  {
+    title: "Clothing store",
+    des: "A minimal apparel storefront with a product catalogue.",
+    stack: ["Next.js", "Tailwind CSS"],
+    img: "/project3.png",
+    link: "https://e-commerce-cyan-nine-38.vercel.app/",
+  },
 ];
 
-export const workExperience = [
+// keep in step with public/resume.pdf
+export const experience = [
   {
-    id: 3,
-    title: "Full Stack Developer",
-    desc: "Currently working as a Full Stack Developer at bepay money, building fintech payment dashboards and APIs with Next.js, Node.js (Express), TypeScript and MongoDB.",
-    className: "md:col-span-2",
-    thumbnail: "/exp3.svg",
+    company: "bepay money",
+    role: "Full Stack Developer",
+    period: "Feb 2026 – Present",
+    current: true,
+    des: "Primary frontend developer for bepay money's web products, working remotely. Built the IGPS cross-border payment flows on production REST APIs, the merchant app, the B2B partner dashboard and a blog CMS for the company website.",
+    stack: ["Next.js", "Node.js", "Express", "TypeScript", "MongoDB"],
   },
   {
-    id: 2,
-    title: "Frontend Developer",
-    desc: "Worked for 6 months as a Frontend Developer at Giakaa, building the Giakaa Innovate website with Next.js, Tailwind CSS and Framer Motion.",
-    className: "md:col-span-2",
-    thumbnail: "/exp2.svg",
+    company: "Giakaa Capital",
+    role: "Frontend Developer",
+    period: "Aug 2025 – Jan 2026",
+    current: false,
+    des: "Joined as an intern and went full time in November 2025. Built Next.js and React features for web products, including the Invest Payments & Banking Forum, and an astrology-consultation MVP with user and partner apps, booking, WebSocket chat and Agora voice calls.",
+    stack: ["Next.js", "React", "WebSockets", "Flutter"],
   },
   {
-    id: 1,
-    title: "Frontend Engineer Intern",
-    desc: "Worked for 6 months as an Intern at CreatedInAm a web-based services provider, using React.js and Next.js, enhancing interactivity and clean UI.",
-    className: "md:col-span-2",
-    thumbnail: "/exp1.svg",
+    company: "CreatedInAm",
+    role: "Frontend Developer Intern",
+    period: "May 2024 – Oct 2024",
+    current: false,
+    des: "Built React and Next.js websites for businesses and NGOs, and a Redux e-commerce storefront.",
+    stack: ["React", "Next.js", "Redux"],
   },
-  // {
-  //   id: 2,
-  //   title: "Mobile App Dev - JSM Tech",
-  //   desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-  //   className: "md:col-span-2", // change to md:col-span-2
-  //   thumbnail: "/exp2.svg",
-  // },
-  // {
-  //   id: 3,
-  //   title: "Freelance App Dev Project",
-  //   desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-  //   className: "md:col-span-2", // change to md:col-span-2
-  //   thumbnail: "/exp3.svg",
-  // },
-  // {
-  //   id: 4,
-  //   title: "Lead Frontend Developer",
-  //   desc: "Developed and maintained user-facing features using modern frontend technologies.",
-  //   className: "md:col-span-2",
-  //   thumbnail: "/exp4.svg",
-  // },
 ];
 
-export const socialMedia = [
+export const stackGroups = [
   {
-    id: 1,
-    img: "/git.svg",
-    url: 'https://github.com/Itssachinsingh'
+    title: "Frontend",
+    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Redux", "Framer Motion"],
   },
   {
-    id: 3,
-    img: "/link.svg",
-    url: 'https://www.linkedin.com/in/sachinsingh--/'
+    title: "Backend",
+    items: ["Node.js", "Express", "REST APIs", "JWT", "WebSockets"],
+  },
+  {
+    title: "Data",
+    items: ["MongoDB", "PostgreSQL", "MySQL"],
+  },
+  {
+    title: "Workflow",
+    items: ["Git & GitHub", "Postman", "Vercel", "Render"],
+  },
+];
+
+export const approach = [
+  {
+    step: "01",
+    title: "Understand & plan",
+    des: "I start with the problem, the users and the constraints, then turn them into a clear plan (data model, API contracts and UI flows) before writing code.",
+  },
+  {
+    step: "02",
+    title: "Build in small steps",
+    des: "I build features end to end in small, reviewable pieces, with typed APIs, reusable components and tests, and share progress early so feedback arrives while changes are cheap.",
+  },
+  {
+    step: "03",
+    title: "Ship & improve",
+    des: "I ship through CI/CD, watch real usage and errors after launch, and keep improving performance, security and the user experience.",
   },
 ];
